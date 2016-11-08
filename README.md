@@ -8,5 +8,5 @@ Once you're happy with the results, select all the records you want and click OK
 
 ## Notes
 1. You don't need to specify the FastVue file at the command line - you will be prompted for it.
-2. The default is to get all URL; if you're only interested in unique URLs you can specify -Unique on the command line.
+2. The default is to get all URLs; if you're only interested in unique URLs you can specify -Unique on the command line.
 3. If you open the resultant .CSV file in Excel you will probably want to have the URLs as clickable. The simplest way to do this is to create a new column and use the 'hyperlink' function. If I'm sharing, I then hide column A and save as a spreadsheet.
