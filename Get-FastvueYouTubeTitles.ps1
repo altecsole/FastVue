@@ -30,6 +30,9 @@
             shown at the end of the line that contains the video url and watcher. Ammended regular expression can commented
             out the old version in case it changes again.
 
+            15th Nov 2016 - Modified the Get-YouTubeTitle function so that it replaces any html char codes in the title
+            with the correct chars - this happens a lot!
+
 ######################################################################################################################
 #>
 
