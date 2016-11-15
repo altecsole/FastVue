@@ -91,10 +91,49 @@ Function Save-FileName($initialDirectory)
 function Get-YouTubeTitle{
     # Use Invoke-WebRequste to download page into a variable and then 
     # use a regular expresion to get the data inside the title tags.
-    param($vidURL)
+    param([string] $vidURL)
     $data = Invoke-WebRequest $vidURL
     $title = [regex] '(?im)(?<=<title>)([\S\s]*?)(?= - YouTube</title>)' 
-    $title.Match($data).value.trim()
+    $result = $title.Match($data).value.trim()
+    @(
+        @("&#33;", "!"),
+        @("&#34;", '"'),
+        @("&#35;", "#"),
+        @("&#36;", "$"),
+        @("&#37;", "%"),
+        @("&#38;", "&"),
+        @("&#39;", "'"),
+        @("&#40;", "("),
+        @("&#41;", ")"),
+        @("&#42;", "*"),
+        @("&#43;", "+"),
+        @("&#44;", ","),
+        @("&#45;", "-"),
+        @("&#46;", "."),
+        @("&#47;", "/"),
+        @("&#58;", ":"),
+        @("&#59;", ";"),
+        @("&#60;", "<"),
+        @("&#61;", "="),
+        @("&#62;", ">"),
+        @("&#63;", "?"),
+        @("&#64;", "@"),
+        @("&#91;", "["),
+        @("&#92;", "\"),
+        @("&#93;", "]"),
+        @("&#94;", "^"),
+        @("&#95;", "_"),
+        @("&#96;", '`'),
+        @("&#123;", "{"),
+        @("&#124;", "|"),
+        @("&#125;", "}"),
+        @("&#126;", "~"),
+        @("&quot;", '"'),
+        @("&amp;", "&"),
+        @("&lt;", "<"),
+        @("&gt;", ">")
+    ) | ForEach-Object {$result = $result -replace $_[0], $_[1]}
+    $result  
 }
 
 
