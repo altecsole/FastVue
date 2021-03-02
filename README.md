@@ -1,8 +1,10 @@
 # FastVue YouTube Activity Report - Video Titles
 
-Please refer to the wiki for a run through of the process with screenshots.
+Please note; this script has been written to work with Fastvue Reporter for Sophos XG. It may well work with other versions of Fastvue reporter.
 
-We use FastVue Reporter to get great reports of web usage from our Barracuda Web Filter. One of the really good reports that we use is an Activity report on YouTube access. This shows the YouTube URL with the watcher and times, but doesn't include the title of the video. The activity report does a great job of showing the top users who are watching YouTube, but we really wanted to know the title of the video to put some context on it.
+Please refer to the 'How to user.pdf' for details.
+
+We use FastVue Reporter to get great reports of web usage from our Sophos XG. One of the really good reports that we use is an Activity report on YouTube access. This shows the YouTube URL with the watcher and times, but doesn't include the title of the video. The activity report does a great job of showing the top users who are watching YouTube, but we really wanted to know the title of the video to put some context on it.
 
 This Powershell script parses the Activity report (exported as a CSV file) for the YouTube URL and the user. This information is then presented in a Grid-View where you can filter if required.
 
